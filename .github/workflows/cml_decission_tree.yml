@@ -23,7 +23,7 @@ jobs:
           python train/decisiontree.py
           python train/logistic_regression.py
           python train/random_forest.py
-          python train/xgboost.py
+          # python train/xgboost.py
       - name: Write CML report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -51,12 +51,12 @@ jobs:
           echo "### Data Visualization" >> report.md
           cml-publish train/random_forest_accuracy.png --md >> report.md
 
-          # XGBoost Classifier
-          echo "### Model Metrics" > report.md
-          cat train/xgboost_metrics.txt >> report.md
+          # # XGBoost Classifier
+          # echo "### Model Metrics" > report.md
+          # cat train/xgboost_metrics.txt >> report.md
 
-          echo "### Data Visualization" >> report.md
-          cml-publish train/xgboost_accuracy.png --md >> report.md
+          # echo "### Data Visualization" >> report.md
+          # cml-publish train/xgboost_accuracy.png --md >> report.md
 
 
           cml-send-comment report.md
