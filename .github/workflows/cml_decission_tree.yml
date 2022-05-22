@@ -37,7 +37,7 @@ jobs:
           python train/decisiontree.py
           # Decission Tree Classifier
           echo "### Model Metrics" > report.md
-          cat train/decission_metrics.txt >> report.md
+          # cat train/decission_metrics.txt >> report.md
 
           echo "### Data Visualization" >> report.md
           cml-publish train/decision_tree_accuracy.png --md >> report.md
@@ -46,7 +46,7 @@ jobs:
           python train/random_forest.py
           # Random Forest Classifier
           echo "### Model Metrics" > report.md
-          cat train/random_metrics.txt >> report.md
+          # cat train/random_metrics.txt >> report.md
 
           echo "### Data Visualization" >> report.md
           cml-publish train/random_forest_accuracy.png --md >> report.md
